@@ -1,5 +1,22 @@
 {
-    "workspaces": [
-        "./dependecies/mosaic/packages/*"
-    ]
+  "name": "vgplots-demo",
+  "description": "A repository for testing vgplots",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StudentAlleg/vgplots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StudentAlleg/vgplots/issues"
+  },
+  "homepage": "https://github.com/StudentAlleg/vgplots#readme",
+  "dependencies": {
+    "@uwdata/vgplot": "^0.3.1"
+  }
 }
