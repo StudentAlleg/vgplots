@@ -1,0 +1,3 @@
+[submodule "dependecies/mosaic"]
+	path = dependecies/mosaic
+	url = https://github.com/uwdata/mosaic

@@ -1,0 +1,5 @@
+{
+    "workspaces": [
+        "./dependecies/mosaic/packages/*"
+    ]
+}
