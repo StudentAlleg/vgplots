@@ -1,6 +1,9 @@
 //import * as index from "./index.js";
-//import * as vg from "@uwdata/vgplot";
-var vg = require("@uwdata/vgplot");
+import * as vg from "./node_modules/@uwdata/vgplot/dist/vgplot.js";
+const wasm = await vg.wasmConnector();
+vg.coordinator().databaseConnector(wasm);
+
+const $brush = vg.Selection.single();
 
 await vg.coordinator().exec(
     vg.loadObjects("memmory", [
@@ -15,14 +18,17 @@ await vg.coordinator().exec(
     ])
   );
 
-export default
-    vg.plot(
-      vg.dot(
-        vg.from("memmory"),
-        { x: "iteration", y: "address"}
-      ),
-      vg.name("Memory Access"),
-      vg.grid(true),
-      vg.xLabel("Iteration"),
-      vg.yLabel("Address")
-    );
+
+let graph= vg.plot(
+  vg.dot(
+    vg.from("memmory"),
+    { x: "iteration", y: "address"}
+  ),
+  vg.name("Memory Access"),
+  vg.grid(true),
+  vg.xLabel("Iteration"),
+  vg.yLabel("Address")
+);
+
+const div1 = document.getElementById("div1");
+div1.appendChild(graph);
