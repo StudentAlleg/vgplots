@@ -1,0 +1,1 @@
+var vg = require("@uwdata/vgplot");

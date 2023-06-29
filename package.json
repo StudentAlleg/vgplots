@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/StudentAlleg/vgplots#readme",
   "dependencies": {
-    "@uwdata/vgplot": "^0.3.1"
+    "@uwdata/vgplot": "^0.3.1",
+    "browserify": "^17.0.0"
   }
 }

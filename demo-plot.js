@@ -1,4 +1,6 @@
-import * as vg from "@uwdata/vgplot";
+//import * as index from "./index.js";
+//import * as vg from "@uwdata/vgplot";
+var vg = require("@uwdata/vgplot");
 
 await vg.coordinator().exec(
     vg.loadObjects("memmory", [
