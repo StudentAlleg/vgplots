@@ -1,21 +1,27 @@
 //import * as index from "./index.js";
 import * as vg from "./node_modules/@uwdata/vgplot/dist/vgplot.js";
+//https://forum.freecodecamp.org/t/how-do-i-import-data-from-json-to-javascript/526050/3
+let memdata
+await fetch("./data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    memdata = data.memdata;
+  });
+
+console.log(memdata);
+
+//lets reign in this data because errors
+
+
+memdata.length = 950;
+
 const wasm = await vg.wasmConnector();
 vg.coordinator().databaseConnector(wasm);
 
 const $brush = vg.Selection.single();
 
 await vg.coordinator().exec(
-    vg.loadObjects("memmory", [
-      {address: 5, iteration: 1},
-      {address: 3, iteration: 3},
-      {address: 2, iteration: 3},
-      {address: 5, iteration: 4},
-      {address: 1, iteration: 5},
-      {address: 9, iteration: 5},
-      {address: 3, iteration: 6},
-      {address: 3, iteration: 7}
-    ])
+    vg.loadObjects("memmory", memdata)
   );
 
 
